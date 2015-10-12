@@ -14,6 +14,7 @@
   <tbody>
     <% @user_logs.each do |user_log| %>
       <tr>
+        
         <td><%= user_log.user.email %></td>
         <td><%= user_log.log_data %></td>
         <td><%= link_to 'Show', user_log %></td>
