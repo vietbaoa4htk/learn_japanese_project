@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20151005080621) do
+=======
 ActiveRecord::Schema.define(version: 20151005083029) do
+>>>>>>> 3ca4e908eb5ac7e256c3869ed1486fd5c8eb51ee
 
   create_table "user_logs", force: :cascade do |t|
     t.integer  "user_id"

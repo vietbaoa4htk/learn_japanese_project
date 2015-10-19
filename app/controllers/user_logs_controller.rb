@@ -4,8 +4,9 @@ class UserLogsController < ApplicationController
   # GET /user_logs
   # GET /user_logs.json
   def index
-    #@user_logs = UserLog.all
-    @user_logs = current_user.user_logs
+    if user_signed_in?
+      @user_logs = current_user.user_logs    
+    end
   end
 
   # GET /user_logs/1
