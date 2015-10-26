@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  number_of_words: 1
+  deadline: 2015-10-26 00:28:02
+
+two:
+  user_id: 1
+  number_of_words: 1
+  deadline: 2015-10-26 00:28:02
