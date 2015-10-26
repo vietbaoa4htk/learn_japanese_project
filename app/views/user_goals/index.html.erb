@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing User Goals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <!-- <th>User</th> -->
+      <th>Number of words</th>
+      <th>Deadline</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_goals.each do |user_goal| %>
+      <tr>
+        <!-- <td><%= user_goal.user_id %></td> -->
+        <td><%= user_goal.number_of_words %></td>
+        <td><%= user_goal.deadline %></td>
+        <td><%= link_to 'Show', user_goal %></td>
+        <td><%= link_to 'Edit', edit_user_goal_path(user_goal) %></td>
+        <td><%= link_to 'Destroy', user_goal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User goal', new_user_goal_path %>

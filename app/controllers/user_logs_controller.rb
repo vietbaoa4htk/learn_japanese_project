@@ -1,12 +1,11 @@
 class UserLogsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_user_log, only: [:show, :edit, :update, :destroy]
 
   # GET /user_logs
   # GET /user_logs.json
   def index
-    if user_signed_in?
-      @user_logs = current_user.user_logs    
-    end
+    @user_logs = current_user.user_logs    
   end
 
   # GET /user_logs/1
@@ -27,6 +26,7 @@ class UserLogsController < ApplicationController
   # POST /user_logs.json
   def create
     @user_log = UserLog.new(user_log_params)
+    @user_log.user_id = current_user.id
 
     respond_to do |format|
       if @user_log.save
