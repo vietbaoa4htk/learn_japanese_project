@@ -11,7 +11,7 @@ class UserGoalsController < ApplicationController
   # GET /user_goals/1
   # GET /user_goals/1.json
   def show
-    learned_logs = UserLog.where("log_data LIKE ?",'%learned % word%')
+    learned_logs = UserLog.where("log_data LIKE ?",'%learned % word%').select('log_data', 'created_at')
     @learned_words = 0
     p learned_logs.class.name
     learned_logs.each do |m|
@@ -28,6 +28,7 @@ class UserGoalsController < ApplicationController
     now = Time.now
     @days_left = @user_goal.deadline > now ? (@user_goal.deadline - now)/1.day : 0
     @chart_data = learned_logs.group_by_day(:created_at, 'sum', 'cast(log_data as integer)')
+    p @chart_data
   end
 
   # GET /user_goals/new
