@@ -19,6 +19,10 @@
     <%= f.label :log_data %><br>
     <%= f.text_field :log_data %>
   </div>
+  <div class="field">
+    <%= f.label :data_type %><br>
+    <%= f.select :data_type, options_for_select(['New word', 'Other'], @user_log.data_type || "Other") %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

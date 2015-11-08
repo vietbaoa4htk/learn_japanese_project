@@ -71,6 +71,6 @@ class UserLogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_log_params
-      params.require(:user_log).permit(:user_id, :log_data)
+      params.require(:user_log).permit(:user_id, :log_data, :data_type)
     end
 end
