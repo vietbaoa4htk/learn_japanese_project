@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
-  resources :user_goals
-  resources :user_logs
   root 'static_pages#home'
   #get 'static_pages/home' 
 
+  resources :user_goals
+  resources :user_logs
+
+  get 'users/:id/show' => 'users#show', as: :show_user
+  post 'users/:id/add-friend' => 'users#add_friend', as: :add_friend
+  post 'users/:id/remove-friend' => 'users#remove_friend', as: :remove_friend
+  post 'users/:id/accept-friend' => 'users#accept_friend', as: :accept_friend
+  post 'users/:id/block-friend' => 'users#block_friend', as: :block_friend
+  post 'users/:id/unblock-friend' => 'users#unblock_friend', as: :unblock_friend
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -43,10 +43,14 @@
 =====================================
 <br>
 
+
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+<%= line_chart [
+  {name: 'Process', data: @chart_data},
+  {name: 'Avg', data: @static_line}
+]%>
+
 <br>
 <%= link_to 'Edit', edit_user_goal_path(@user_goal) %> |
 <%= link_to 'Back', user_goals_path %>
 <br>
-
-<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-<%= line_chart @chart_data %>

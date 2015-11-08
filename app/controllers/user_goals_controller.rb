@@ -11,23 +11,20 @@ class UserGoalsController < ApplicationController
   # GET /user_goals/1
   # GET /user_goals/1.json
   def show
-    learned_logs = UserLog.where("log_data LIKE ?",'%learned % word%')
-    @learned_words = 0
-    p learned_logs.class.name
-    learned_logs.each do |m|
-      match = m.log_data.to_s.match('learned (\d+) word')
-      if match
-        @learned_words += match[1].to_i
-        m.log_data = match[1].to_i
-      end
-    end  
-
-    print learned_logs.all().select('cast(log_data as integer) as log_new').to_a
+    @learned_words = UserLog.where(data_type: 'New word').sum('cast(log_data as integer)')
+    p @learned_words
 
     @remaining_words = @user_goal.number_of_words > @learned_words ? @user_goal.number_of_words - @learned_words : 0
     now = Time.now
     @days_left = @user_goal.deadline > now ? (@user_goal.deadline - now)/1.day : 0
-    @chart_data = learned_logs.group_by_day(:created_at, 'sum', 'cast(log_data as integer)')
+    @chart_data = UserLog.group_by_day(:created_at, 'sum', 'cast(log_data as integer)')
+    p @chart_data.class
+    avg_word = @user_goal.number_of_words / ((@user_goal.deadline - @user_goal.created_at)/1.day).floor
+    @static_line = Hash[@chart_data.map { |k, v| 
+      p v
+      [k, avg_word]
+    }]
+    @static_line[@user_goal.deadline] = avg_word
   end
 
   # GET /user_goals/new

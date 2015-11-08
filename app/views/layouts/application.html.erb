@@ -11,14 +11,29 @@
 <% if user_signed_in? %>
   <h3> Xin chao, <%= current_user.email %>!  </h3>
   <%= link_to "Log out", destroy_user_session_path, method: :delete %>  
+  <br>
+  <% if @pending_invited && @pending_invited.any? %>
+    <% @pending_invited.each do |user| %>
+      <div class="field">
+        <h3>
+          <%= user.name %>
+          <span>
+            <div style="float: right;"><%= render partial: "/users/accept_friend_form", locals: {user: user} %></div>
+            <div style="float: right;"><%= render partial: '/users/block_request_form', locals: {user: @user} %></div>
+          </span>
+        </h3>
+        <hr>
+      </div>
+    <% end %>
+  <% end %>
   
-  <% else %>
+<% else %>
   <%= link_to "Sign in", new_user_session_path %>
   <%= link_to "Sign up", new_user_registration_path %>
   
-  <% end %>
-  <br>
-  ==========================================
+<% end %>
+<br>
+==========================================
   
 <%= yield %>
 

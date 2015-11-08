@@ -1,0 +1,25 @@
+
+<br>
+<h1><%= @user.name %></h1>
+<br>
+====================================
+
+<% if @friend_state %>
+	<% if @friend_state == 'available' %>
+		<%= render partial: 'friend_request_form', locals: {user: @user}  %>
+	<% end %>
+	<% if @friend_state == 'approved' %>
+		<%= render partial: 'remove_friend_form', locals: {user: @user}  %>
+	<% end %>
+	<% if @friend_state == 'approving' %>
+		<%= render partial: 'accept_friend_form', locals: {user: @user}  %>
+		<%= render partial: 'block_request_form', locals: {user: @user} %>
+	<% end %>
+	<% if @friend_state == 'pending' %>
+		<%= render partial: 'cancel_request_form', locals: {user: @user}  %>
+	<% end %>
+	<% if @friend_state == 'blocked' %>
+		<%= render partial: 'unblock_request_form', locals: {user: @user} %>
+	<% end %>
+<% end %>
+  
