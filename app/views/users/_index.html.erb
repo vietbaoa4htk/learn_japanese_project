@@ -1,0 +1,13 @@
+<h1><%= t ".h1index" %></h1>
+<%= will_paginate %>
+<div>
+  <%= render "users/search" %>
+</div>
+<ul class="list-group">
+  <% if @users.present? %>
+    <%= render @users %>
+  <% else %>
+    <p><%= t ".no_result", result: params[:search] %>.</p>
+  <% end %>
+</ul>
+<%= will_paginate %>

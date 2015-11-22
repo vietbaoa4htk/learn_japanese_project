@@ -1,0 +1,25 @@
+<%= form_for @lesson do |f| %>
+  <%= f.fields_for :results do |builder| %>
+    <div class="row question">
+      <div class="col-md-4">        
+        <h3>
+          <%= builder.options[:child_index] + 1 %>.
+          <%= builder.object.word.content %>
+        </h3>
+      </div>
+      <div class="col-md-8 container-fluid">
+        <% builder.object.word.answers.suffer.each do |answer| %>
+          <div class="row">
+            <%= builder.radio_button :answer_id, answer.id %>
+            <%= answer.content %>
+          </div>
+          <hr>
+        <% end %>
+      </div>
+      <hr>
+    </div>
+  <% end %>
+  <div class="row">
+    <%= f.submit t(".submit"), class: "col-md-2 btn btn-primary", id: "submit_test" %>
+  </div>
+<% end %>

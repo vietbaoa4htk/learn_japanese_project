@@ -1,0 +1,174 @@
+ja:
+  wait: "お待ちください。。。。"
+  layouts: 
+    header:
+      website: "DMM - Japanese Learning System"
+      home: "ホーム"
+      help: "ヘルプ"
+      log_in: "ログイン"
+      log_out: "ログアウト"
+      setting: "設計"
+      all_users: "ユーザー"
+      sign_up: "登録"
+      profile: "基本データ"
+      account: "アカウント"
+      import/export_file_csv: "入/出 データ"
+    footer:
+      website: "DMM"
+      home: "ホーム"
+      help: "ヘルプ"
+    application:
+      title: "DMM"
+  static_pages:
+    home:
+      btn_words: "カテゴリ"
+      btn_lessons: "課題"
+      btn_goals: "Target"
+    help:
+      h3: "管理者にお連絡してお願い!"
+  users:
+    new:
+      signup: "登録"
+      name: "名前"
+      email: "メール"
+      password: "パスワード"
+      confirmation: "確認"
+    edit:
+      edit: "プロフィル設計"
+      name: "名前"
+      email: "メール"
+      password: "パスワード"
+      confirmation: "確認"
+    index:
+      h1index: "全ユーザー"
+      no_result: "見つかりません %{result}"
+    follow:
+      submit: "フォロー"
+    unfollow:
+      submit: "フォローをやめる。"
+    search:
+      placeholder: "ユーザーを検索"
+      btn_search: "検索"
+    form:
+      btn_submit_edit: "変更する。"
+      btn_submit_new: "アカウントを登録する。"
+  categories:
+    index:
+      title: "カテゴリ"
+    category:
+      btn_take: "レッスンを取る"
+      btn_gotoword: "言葉"
+  shared:
+    error_messages:
+      error_message: "エラーの数: "
+      error: "エラー"
+  controllers:
+    users:
+      create:
+        flash_success: "%{name}　様、おはようございます。"
+      update:
+        flash_success: "プロフィールを変更しました。"
+      destroy:
+        flash_success: "削除しました。"
+        flash_danger: "このユーザーを削除できません。"
+    sessions:
+      create:
+        flash_danger: "メールアドレス/パスワードが正しくありません。"
+        flash_danger_blocked: "%{time}　にあなたのアカウントをブロックしてしまった。"
+    application:
+      logged_in_user: "ログインしてください。"
+      verify_admin: "あなたは管理者じゃありません。"
+    lessons:
+      create:
+        flash_danger: "Error when create a lesson"
+      already_done: "You has finished this lesson"
+    admin:
+      users:
+        success_edit_role: "役割を変更しました。"
+        failed_edit_role: "役割を変更できません。"
+        success_reset_password: "パスワードをリセットしました。"
+        failed_reset_password: "パスワードをリセットできません。"
+  sessions:
+    new:
+      login: "ログイン"
+      email: "メール"
+      password: "パスワード"
+      btn_submit: "ログイン"
+      signup: "アカウント登録"
+      new_user?: "新しいユーザー？"
+      remember_me: "ログインしたままにする"
+    sessions:
+      create:
+        flash_danger: "メールアドレス/パスワードが正しくありません。"
+  admin:
+    users:
+      user:
+        btn_delete: "削除"
+        confirm: "Are you sure?"
+        btn_block: "ブロック"
+        btn_unblock: "ブロックを解除"
+      index:
+        h1index: "All users"
+        no_result: "%{result}がありません。"
+      show:
+        confirm: "Are you sure?"
+        btn_block: "ブロック"
+        btn_unblock: "ブロックを解除"
+        btn_save: "保存"
+        confirm: "Are you sure?"
+        btn_reset: "パスワードをリセットする"
+    words:
+      index:
+        btn_submit: "Import data from CSV file"
+        flash_success: "Successfull import data from CSV file"
+        flash_danger2: "Cannot read data!"
+        flash_danger1: 
+          - Nothing change. Please check your file again!
+          - Maybe this file was not csv file or this file was successfull imported.
+        file_structure: "Structure of file:"
+        title: "Import a CSV File"
+        guide1: "- Line 1: category_name,word_content,true_answer,other_answers"
+        guide2: "- In other_answers, each word separated by a /"
+        guide3: "Example: animal,dog,chó,mèo/gà/vịt/"
+        btn_export: "Export CSV file"
+      update:
+        flash_success: "変更しました。"
+      edit:
+        word: "言葉"
+        answers: "答え"
+  lessons:
+    lesson:
+      take_lesson: "取る"
+      question_done: "/Total"
+      slash: "in total"
+    index:
+      all_lesson: "All lessons"
+      lesson_category_name: "カテゴリ"
+      lesson_results_answered: "Answered"
+      lesson_create_time: "Created at"
+      lesson_mark: "スコア"
+    lesson_form:
+      btn_take: "取る"
+    show:
+      all_lesson: "Show lesson"
+      user_role: "This user's role"
+      btn_save: "変更する"
+      false_result: "False"
+    edit:
+      submit: "サミット"
+      submit_confirm: "Submit your answer?"
+  helpers:
+    sessions:
+      name_of_role:
+        normal: "ノーマルユーザー"
+        admin: "管理者"
+        teacher: "教師"
+  words:
+    index:
+      btn_filter: "適用する。"
+      not_learn: "勉強しません。"
+      learned: "勉強しました。"
+  shared:
+    stats:
+      following: "フォローしている。"
+      followers: "フォロワー"

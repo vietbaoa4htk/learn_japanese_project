@@ -1,0 +1,183 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#body-content{
+  margin-top: 80px;
+  min-height: 510px;
+}
+
+#user-menu{
+  margin-left: 20px;
+}
+
+#nav-custom{
+  background-color: #205081;
+  color:white;
+}
+
+#user-detail { 
+    color: #205081;
+}
+
+footer {
+  margin-top: 45px;
+  padding-bottom: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
+ul li {
+  list-style: none
+}
+
+ul li .time-ago {
+  font-size: 80%;
+  font-style: oblique;
+}
+
+#btn-signup{
+  position: relative;
+  top: 10px;
+  left: 200px;
+}
+
+.pagination {
+  font-size: 12px;
+}
+
+.pagination > * {
+  margin-right: 0.1em;
+  padding: 0.3em 0.4em;
+}
+
+.pagination a:hover {
+  background: #428BCA none repeat scroll 0 0;
+  text-shadow: 1px 1px 1px #171717;
+}
+
+.pagination a:active {
+  text-shadow: none;
+}
+
+.pagination .current {
+  background: #428BCA none repeat scroll 0 0;
+  color: white;
+  text-shadow: 1px 1px 1px #171717;
+}
+
+.pagination .disabled {
+  color: #C0C0C0;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.table-title{
+  background-color: #fafafa;
+  min-height: 30px;
+  font-size: 120%;
+  margin-bottom: 30px;
+}
+
+.answer-fail{
+  background-color: #ffe6e6;
+  padding: 10px;
+}
+.answer-true{
+  background-color: #ccffcc;
+  padding: 10px; 
+}
+.question{
+  font-size: 110%; 
+}
+#Date {
+  font-family: "BebasNeueRegular", Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #003366;
+}
+
+.clock ul {
+  list-style: none;
+  color: #003366;
+}
+
+.clock ul li {
+  display: inline;
+  font-family: "BebasNeueRegular", Arial, Helvetica, sans-serif;
+}
+
+#point {
+  position: relative;
+  -moz-animation: mymove 1s ease infinite;
+  -webkit-animation: mymove 1s ease infinite;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@-webkit-keyframes mymove {
+  0% {
+    opacity: 1.0;
+  }
+
+  50% {
+    opacity: 0;
+    text-shadow: none;
+  }
+
+  100% {
+    opacity: 1.0;
+  } 
+}
+
+@-moz-keyframes mymove {
+  0% {
+    opacity: 1.0;
+  }
+
+  50% {
+    opacity: 0;
+    text-shadow: none;
+  }
+
+  100% {
+    opacity: 1.0;
+  };
+}
+.clock{
+  position: relative;
+  left: 45%;
+}

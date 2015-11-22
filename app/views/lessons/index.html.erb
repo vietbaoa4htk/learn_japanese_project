@@ -1,0 +1,19 @@
+<h3 class="row">
+  <%= t ".all_lesson" %>
+</h3>
+<div classs="row">
+  <div class="col-md-2 table-title">
+    <%= t ".lesson_category_name" %>
+  </div>
+  <div class="col-md-2 table-title">
+    <%= t ".lesson_results_answered" %>
+  </div>
+  <div class="col-md-4 table-title">
+    <%= t ".lesson_create_time" %>
+  </div>
+  <div class="col-md-4 table-title">
+    <%= t ".lesson_mark" %>
+  </div>
+</div>
+<%= render @lessons %>
+<%= will_paginate @lessons %>

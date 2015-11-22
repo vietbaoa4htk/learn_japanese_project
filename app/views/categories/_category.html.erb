@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-4">
+    <%= category.name %>
+  </div>
+  <div class="col-md-8">
+    <%= category.description %>
+    <blockquote>
+      <% category.words.each do |word| %>
+        <% if current_user.admin? %>
+          <%= link_to word.content, edit_admin_word_path(word) %>
+        <% else %>
+          <%= word.content %>
+        <% end %>
+      <% end %>
+    </blockquote>
+    <%= form_for [category, category.lessons.build] do |f| %>
+      <%= f.submit t(".btn_take"), class: "btn btn-primary col-md-2" %>
+    <% end %>
+    <%= button_to t(".btn_gotoword"), category_words_path(category),
+      method: :get, class: "btn btn-primary col-md-2" %>
+  </div>
+</div>

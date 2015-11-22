@@ -1,66 +1,59 @@
 class UsersController < ApplicationController
-	before_action :authenticate_user!, only: [:add_friend]
+  before_action :logged_in_user, only: [:edit, :update, :destroy]
+  before_action :load_user, only: [:show, :edit, :update]
+  before_action :correct_user, only: [:edit, :update]
 
   def index
+    if params[:search]
+      @users = User.search(params[:search])
+        .paginate page: params[:page], per_page: 10
+    else
+      @users = User.paginate page: params[:page], per_page: 10
+    end
+  end
+
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new user_params
+    if @user.save
+      log_in @user
+      flash[:success] = t "controllers.users.create.flash_success",
+        name: @user.name
+      redirect_to @user
+    else
+      render :new
+    end
   end
 
   def show
-  	# redirect if request to current user
-  	if (current_user && current_user.id.to_s == params[:id])
-  		redirect_to :edit_user_registration
-  	end
-
-  	@user = User.find(params[:id])
-
-  	@friend_state = nil
-  	if (user_signed_in?)
-  		if (current_user.friend_with? @user)
-  			@friend_state = 'approved'
-  		elsif (@user.invited_by? current_user)
-  			@friend_state = 'pending'
-  		elsif (current_user.blocked? @user)
-  			@friend_state = 'blocked'
-  		elsif (current_user.invited_by? @user)
-  			@friend_state = 'approving'
-  		else
-  			@friend_state = 'available'
-  		end
-  	end
+    redirect_to root_path if @user.nil?
   end
 
-  def add_friend
-  	@user = User.find(params[:id])
-  	current_user.invite(@user)
-
-  	redirect_to :show_user, id: params[:id]
+  def edit
   end
 
-  def remove_friend
-  	@user = User.find(params[:id])
-  	current_user.remove_friendship(@user)
-
-  	redirect_to :show_user, id: params[:id]
+  def update
+    if @user.update_attributes user_params
+      flash[:success] = t "controllers.users.update.flash_success"
+      redirect_to @user
+    else
+      render :edit
+    end
   end
 
-  def accept_friend
-  	@user = User.find(params[:id])
-  	re = current_user.approve(@user)
-  	p re
-
-  	redirect_to :show_user, id: params[:id]
+  private
+  def user_params
+    params.require(:user).permit :name, :email, :password, :password_confirmation
   end
 
-  def block_friend
-  	@user = User.find(params[:id])
-  	current_user.block(@user)
-
-  	redirect_to :show_user, id: params[:id]
+  def correct_user
+    redirect_to root_url unless current_user? @user
   end
 
-  def unblock_friend
-  	@user = User.find(params[:id])
-  	current_user.unblock(@user)
-
-  	redirect_to :show_user, id: params[:id]
+  def load_user
+    @user = User.find params[:id] if User.exists? params[:id]
   end
 end

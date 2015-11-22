@@ -1,4 +1,29 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
-
-This is our home pages
+<div class="row">
+  <div class="col-md-4 row">
+    <section class="user_info center jumbotron">
+      <%= link_to gravatar_for(current_user), current_user %>
+      <h3><%= current_user.name %></h3>
+    </section>
+  </div>
+  <div class="col-md-8 container-fluid">
+    <div class="row", id="user-menu">      
+      <%= button_to t(".btn_words"), categories_path,
+        class: "btn btn-default col-md-4", method: :get %>
+      <%= button_to t(".btn_lessons"), lessons_path,
+        class: "btn btn-default col-md-4", method: :get %>
+      <%= button_to t(".btn_goals"), user_goals_path,
+        class: "btn btn-default col-md-4", method: :get %>
+    </div>
+    <hr>
+    <div class="row", id="user-word-list">
+      <ul class="container-fluid">
+        <div id="activities">
+          <%= render @activities %>
+        </div>
+        <div id="scroll">
+          <%= will_paginate @activities %>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>

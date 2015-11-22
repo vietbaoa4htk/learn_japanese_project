@@ -1,0 +1,14 @@
+<div class="activity">
+  <li class="row">
+    <div class="col-md-4">
+      <%= gravatar_for activity.user %>
+      <%= link_to activity.user.name, activity.user %>
+    </div>
+    <div class="col-md-4">
+      <%= activity.type_of_activity %>
+    </div>
+    <div class="col-md-4 time-ago">
+      <%= activity.created_at.to_formatted_s :short %>
+    </div>
+  </li>
+</div>

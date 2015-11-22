@@ -1,23 +1,174 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  wait: "Please wait..."
+  layouts: 
+    header:
+      website: "DMM - Japanese Learning System"
+      home: "Home"
+      help: "Help"
+      log_in: "Log in"
+      log_out: "Log out"
+      setting: "Setting"
+      all_users: "All users"
+      sign_up: "Sign up"
+      profile: "Profile"
+      account: "Account"
+      import/export_file_csv: "Import/Export file"
+    footer:
+      website: "Developer: Bi Group"
+      home: "Home"
+      help: "Help"
+    application:
+      title: "DMM"
+  static_pages:
+    home:
+      btn_words: "Category"
+      btn_lessons: "Lessons"
+      btn_goals: "Goals"
+    help:
+      h3: "You can contact with administrators:"
+  users:
+    new:
+      signup: "Sign up!"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      confirmation: "Confirmation"
+    edit:
+      edit: "Update your profile"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      confirmation: "Confirmation"
+    index:
+      h1index: "All users"
+      no_result: "Not found result with %{result}"
+    follow:
+      submit: "Follow"
+    unfollow:
+      submit: "Unfollow"
+    search:
+      placeholder: "Search user"
+      btn_search: "Search"
+    form:
+      btn_submit_edit: "Save changes"
+      btn_submit_new: "Create my account"
+  categories:
+    index:
+      title: "All category"
+    category:
+      btn_take: "Take a lesson"
+      btn_gotoword: "Words"
+  shared:
+    error_messages:
+      error_message: "Number of error: "
+      error: "error"
+  controllers:
+    users:
+      create:
+        flash_success: "Hello %{name}! Welcome to Japanese Learning system!"
+      update:
+        flash_success: "Profile updated!"
+      destroy:
+        flash_success: "User deleted!"
+        flash_danger: "Cannot delete this user!"
+    sessions:
+      create:
+        flash_danger: "Invalid email/password combination"
+        flash_danger_blocked: "Your account has been blocked at %{time}"
+    application:
+      logged_in_user: "Please log in."
+      verify_admin: "You are not administrator."
+    lessons:
+      create:
+        flash_danger: "Error when create a lesson"
+      already_done: "You has finished this lesson"
+    admin:
+      users:
+        success_edit_role: "Update role success!"
+        failed_edit_role: "Cannot update this user's role!"
+        success_reset_password: "Password has successfull reset!"
+        failed_reset_password: "Cannot reset this user's password."
+  sessions:
+    new:
+      login: "Log in"
+      email: "Email"
+      password: "Password"
+      btn_submit: "Log in"
+      signup: "Sign up now!"
+      new_user?: "New user?"
+      remember_me: "Remember me on this computer"
+    sessions:
+      create:
+        flash_danger: "Invalid email/password combination"
+  admin:
+    users:
+      user:
+        btn_delete: "Delete"
+        confirm: "Are you sure?"
+        btn_block: "Block"
+        btn_unblock: "Unblock"
+      index:
+        h1index: "All users"
+        no_result: "Not found result with %{result}"
+      show:
+        confirm: "Are you sure?"
+        btn_block: "Block"
+        btn_unblock: "Unblock"
+        btn_save: "Save"
+        confirm: "Are you sure?"
+        btn_reset: "Reset password"
+    words:
+      index:
+        btn_submit: "Import data from CSV file"
+        flash_success: "Successfull import data from CSV file"
+        flash_danger2: "Cannot read data!"
+        flash_danger1: 
+          - Nothing change. Please check your file again!
+          - Maybe this file was not csv file or this file was successfull imported.
+        file_structure: "Structure of file:"
+        title: "Import a CSV File"
+        guide1: "- Line 1: category_name,word_content,true_answer,other_answers"
+        guide2: "- In other_answers, each word separated by a /"
+        guide3: "Example: animal,dog,chó,mèo/gà/vịt/"
+        btn_export: "Export CSV file"
+      update:
+        flash_success: "Change success full"
+      edit:
+        word: "Word"
+        answers: "Answers"
+  lessons:
+    lesson:
+      take_lesson: "Take"
+      question_done: "/Total"
+      slash: "in total"
+    index:
+      all_lesson: "All lessons"
+      lesson_category_name: "Category"
+      lesson_results_answered: "Answered"
+      lesson_create_time: "Created at"
+      lesson_mark: "Score"
+    lesson_form:
+      btn_take: "Take"
+    show:
+      all_lesson: "Show lesson"
+      user_role: "This user's role"
+      btn_save: "Save"
+      false_result: "False"
+    edit:
+      submit: "Summit"
+      submit_confirm: "Submit your answer ?"
+  helpers:
+    sessions:
+      name_of_role:
+        normal: "Normal"
+        admin: "Administrator"
+        teacher: "Teacher"
+  words:
+    index:
+      btn_filter: "Apply"
+      not_learn: "Not learn"
+      learned: "Learned"
+  shared:
+    stats:
+      following: "following"
+      followers: "followers"

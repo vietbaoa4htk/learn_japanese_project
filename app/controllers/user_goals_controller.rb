@@ -1,47 +1,28 @@
 class UserGoalsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :logged_in_user
   before_action :set_user_goal, only: [:show, :edit, :update, :destroy]
 
-  # GET /user_goals
-  # GET /user_goals.json
   def index
-    @user_goals = current_user.user_goals    
+    @user_goals = UserGoal.all
+    @word_goals = current_user.user_goals
+    @user_logs = UserLog.all
+    @word_logs = current_user.user_logs
   end
 
-  # GET /user_goals/1
-  # GET /user_goals/1.json
   def show
-    @learned_words = UserLog.where(data_type: 'New word').sum('cast(log_data as integer)')
-    p @learned_words
-
-    @remaining_words = @user_goal.number_of_words > @learned_words ? @user_goal.number_of_words - @learned_words : 0
-    now = Time.now
-    @days_left = @user_goal.deadline > now ? (@user_goal.deadline - now)/1.day : 0
-    @chart_data = UserLog.group_by_day(:created_at, 'sum', 'cast(log_data as integer)')
-    p @chart_data.class
-    avg_word = @user_goal.number_of_words / ((@user_goal.deadline - @user_goal.created_at)/1.day).floor
-    @static_line = Hash[@chart_data.map { |k, v| 
-      p v
-      [k, avg_word]
-    }]
-    @static_line[@user_goal.deadline] = avg_word
   end
 
-  # GET /user_goals/new
   def new
     @user_goal = UserGoal.new
   end
 
-  # GET /user_goals/1/edit
-  def edit
+  def edit    
   end
 
-  # POST /user_goals
-  # POST /user_goals.json
   def create
-    @user_goal = UserGoal.new(user_goal_params)
-    @user_goal.user_id = current_user.id
-
+    @user_goal = current_user.user_goals.build
+    @user_goal.number_of_words = user_goal_params[:number_of_words]
+    @user_goal.deadline = DateTime.strptime(user_goal_params[:deadline], '%m/%d/%Y')
     respond_to do |format|
       if @user_goal.save
         format.html { redirect_to @user_goal, notice: 'User goal was successfully created.' }
@@ -53,8 +34,6 @@ class UserGoalsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /user_goals/1
-  # PATCH/PUT /user_goals/1.json
   def update
     respond_to do |format|
       if @user_goal.update(user_goal_params)
@@ -67,8 +46,6 @@ class UserGoalsController < ApplicationController
     end
   end
 
-  # DELETE /user_goals/1
-  # DELETE /user_goals/1.json
   def destroy
     @user_goal.destroy
     respond_to do |format|
@@ -78,13 +55,12 @@ class UserGoalsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_user_goal
       @user_goal = UserGoal.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def user_goal_params
-      params.require(:user_goal).permit(:user_id, :number_of_words, :deadline)
+      params.require(:user_goal).permit(:number_of_words, :deadline)
     end
+
 end
