@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<!-- <p>
+<p>
   <strong>User:</strong>
   <%= @user_goal.user_id %>
 </p>
- -->
+
 <p>
   <strong>Number of words:</strong>
   <%= @user_goal.number_of_words %>
@@ -15,42 +15,5 @@
   <%= @user_goal.deadline %>
 </p>
 
-====================================
-
-<p>
-  <strong>Learned words:</strong>
-  <span id="learned_words"><%= @learned_words %></span>
-</p>
-
-<p>
-  <strong>Remaining words:</strong>
-  <span id="remaining_words"><%= @remaining_words %></span>
-</p>
-
-<p>
-  <strong>Days left:</strong>
-  <%= @days_left %>
-</p>
-
-<p>
-	<% if out_of_date?(@days_left) %>
-		This goal was out of date
-	<% else %>
-	  You have to learn <%= @remaining_words/@days_left %> words per day to complete your goal
-	<% end %>
-</p>
-
-=====================================
-<br>
-
-
-<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-<%= line_chart [
-  {name: 'Process', data: @chart_data},
-  {name: 'Avg', data: @static_line}
-]%>
-
-<br>
 <%= link_to 'Edit', edit_user_goal_path(@user_goal) %> |
 <%= link_to 'Back', user_goals_path %>
-<br>

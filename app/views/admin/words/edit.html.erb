@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-4">
+    <%= form_for [:admin, @word] do |f| %>
+      <%= f.label :content, t(".word") %>
+      <%= f.text_field :content,class: "form-control" %>
+      <%= f.label :content, t(".answers") %>
+      <div class="answers">
+        <%= f.fields_for :answers do |builder| %>
+          <div class="controls form-inline">
+            <%= render "answer_fields", f: builder %>          
+          </div>
+        <% end %>
+        <%= link_to_add_fields t(".add_answer"), f, :answers %>
+      </div>
+      <br>
+      <%= f.submit "Change", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

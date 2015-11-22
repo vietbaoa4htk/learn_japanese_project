@@ -9,6 +9,14 @@ default: &default
   pool: 5
   timeout: 5000
 
+default: &default_postgres
+  adapter: postgresql
+  encoding: unicode
+  database: bi_fight_kanji
+  pool: 5
+  username: admin
+  password: 123456
+
 development:
   <<: *default
   database: db/development.sqlite3

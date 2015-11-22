@@ -1,0 +1,22 @@
+user:
+  gavatar_url: "https://secure.gravatar.com/avatar/"
+  default_password: "123456789"
+  role:
+    - normal
+    - admin
+    - teacher
+session:
+  number: "1"
+category_type:
+  all_word: "all_word"
+  learned: "learned"
+  not_learn: "not_learn"
+word:
+  column_name:
+    - category_name
+    - word_content
+    - true_answer
+    - other_answers
+activity_type:
+  take_lesson: "Take a lesson!"
+  follow_user: "Follow user"

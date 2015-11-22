@@ -1,0 +1,26 @@
+<div id="lesson-container", class="row">
+  <div class="col-md-2">
+    <%= lesson.category.name %>
+  </div>
+  <div class="col-md-6">
+    <div class="col-md-2">
+      <%= lesson.results.answered.count %>
+      <%= t ".question_done" %>
+    </div>
+    <div class="col-md-4">
+      <%= lesson.created_at.to_formatted_s :short %>
+    </div>
+  </div>
+  <% unless lesson.finished? %>
+    <div class="col-md-4">
+      <%= button_to t(".take_lesson"), edit_lesson_path(lesson), method: :get, class: "btn btn-default" %>
+    </div>
+  <% else %>
+    <div class="col-md-4">
+      <%= lesson.mark %>
+      <%= t ".slash" %>
+      <%= lesson.results.count %>
+    </div>
+  <% end %>
+</div>
+<hr>

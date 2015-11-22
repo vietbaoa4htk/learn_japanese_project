@@ -1,0 +1,20 @@
+<li>
+  <%= gravatar_for user %>
+  <% if current_user? user %>
+    <%= link_to user.name, user_path(user) %>
+  <% else %>
+    <%= link_to user.name, admin_user_path(user) %>
+  <% end %>
+  <%= user.email %>
+  <% unless current_user? user %>
+    | <%= link_to t(".btn_delete"), admin_user_path(user), method: :delete,
+      data: {confirm: t(".confirm")} %>
+    <% if user.blocked? %>
+      | <%= link_to t(".btn_unblock"), admin_user_path(user, admin_action: "block"), method: :patch,
+        data: {confirm: t(".confirm")} %>
+    <% else %>
+      | <%= link_to t(".btn_block"), admin_user_path(user, admin_action: "block"), method: :patch,
+        data: {confirm: t(".confirm")} %>
+    <% end %>
+  <% end %>
+</li>

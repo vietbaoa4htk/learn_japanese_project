@@ -1,0 +1,25 @@
+<h3 class="row">
+  <%= t ".all_lesson" %>
+</h3>
+<%= render @lesson %>
+<% if @lesson.finished? %>
+  <div class="row">
+    <% @lesson.results.each_with_index do |result, index| %>
+      <div class="col-md-4 question" >
+        <%= index + 1 %>.&nbsp
+        <%= result.word.content %>  
+      </div>
+      <div class= "col-md-8">
+        <% if result.correct? %>
+          <div class="answer-true">
+            <%= result.answer.content %>
+          </div>
+        <% else %>
+          <div class="answer-fail">
+            <%= t ".false_result" %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

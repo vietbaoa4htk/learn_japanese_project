@@ -1,25 +1,44 @@
 <%= form_for(@user_goal) do |f| %>
-  <% if @user_goal.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user_goal.errors.count, "error") %> prohibited this user_goal from being saved:</h2>
+<% if @user_goal.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@user_goal.errors.count, "error") %> prohibited this user_goal from being saved:</h2>
 
-      <ul>
-      <% @user_goal.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <ul>
+    <% @user_goal.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<script type="text/javascript">
+  $(function () {
+    $('#datetimepicker1').datetimepicker();
+  });
+</script>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="field form-group">
+        <%= f.label :number_of_words %><br>
+        <%= f.number_field :number_of_words %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :number_of_words %><br>
-    <%= f.number_field :number_of_words %>
   </div>
-  <div class="field">
-    <%= f.label :deadline %><br>
-    <%= f.datetime_select :deadline %>
+  <div class="row">
+    <div class='col-sm-4'>
+      <div class="form-group">
+        <%= f.label :deadline %><br>
+        <div class='input-group date' id='datetimepicker1'>
+          <%= f.datetime_field :deadline, class: "form-control" %>
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
+<div class="actions">
+  <%= f.submit "Fight!", class: "btn btn-success" %>
+</div>
 <% end %>

@@ -1,0 +1,4 @@
+$(document).on "page:change", ->
+  $('#submit_test').click ->
+    confirm '<%= I18n.t "lessons.edit.submit_confirm" %>'
+  return

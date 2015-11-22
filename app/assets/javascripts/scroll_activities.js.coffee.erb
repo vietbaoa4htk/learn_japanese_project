@@ -1,0 +1,10 @@
+$(document).on "page:change", ->
+  if $("#scroll .pagination").length
+    $(window).scroll ->
+      more_activities_url = $("#scroll .pagination .next_page").attr("href")
+      if more_activities_url and $(window).scrollTop() > $(document).height() - $(window).height() - 50
+        $("#scroll .pagination").text("<%= I18n.t "wait" %>")
+        $.getScript more_activities_url
+      return
+    return $(window).scroll()
+  return

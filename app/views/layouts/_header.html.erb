@@ -1,0 +1,44 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <nav class="nav navbar-nav navbar-left">
+      <ul class="nav navbar-nav">
+        <li>
+          <%= link_to t(".website"), "/", id: "nav-custom" %>
+        </li>
+      </ul>
+    </nav>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <%= link_to "English", "/en/" %>
+        <%= link_to "Japanese", "/ja/" %>
+        <% if logged_in? %>
+          <% if current_user.admin? %>
+            <li><%= link_to t(".home"), admin_root_path %></li>
+            <li><%= link_to t(".import/export_file_csv"), admin_words_path %></li>
+            <li><%= link_to t(".all_users"), admin_users_path %></li>
+          <% else %>
+            <li><%= link_to t(".home"), root_path %></li>
+            <li><%= link_to t(".all_users"), users_path %></li>
+          <% end %>
+          <li class="dropdown">
+            <%= link_to "#", class: "dropdown-toggle", "data-toggle" => "dropdown" do %>
+              <%= t ".account" %>
+              <b class="caret"></b>
+            <% end %>
+            <ul class="dropdown-menu">
+              <li><%= link_to t(".profile"), current_user %></li>
+              <li><%= link_to t(".setting"), edit_user_path(current_user) %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to t(".log_out"), logout_path, method: "delete" %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to t(".sign_up"), signup_path %></li>
+          <li><%= link_to t(".log_in"), login_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,20 @@
+category_name,word_content,true_answer,other_answers
+animal,dog,chó,mèo/gà/vịt/
+animal,cat,mèo,chó/heo/ngỗng/
+animal,bird,chim,chuột/mèo/thằn lằn/
+animal,duck,vịt,chó/mèo/chim/
+animal,mouse,chuột,sâu/người/chó/
+animal,fly,ruồi,ong/chim cánh cụt/chó/
+animal,ant,kiến,ong/ruồi/chó/
+animal,bee,ong,chó/mèo/gà/
+animal,chicken,gà,chó/heo/bò/
+animal,pig,lợn,gà/chó/bò/
+animal,cow,bò cái,gà/chó/heo/
+animal,panda,gấu trúc,chim/chuột/chó/
+animal,bear,gấu,cá/chim/heo/
+animal,fish,cá,lợn/heo/chuột/
+animal,fox,cáo,chim/chuột/mèo/
+animal,butterfly,bướm,chim/chuột/cá/
+animal,snake,rắn,chuột/chó/mèo/
+animal,pigeon,chim bồ câu,chuột/cá/heo/
+animal,camel,lạc đà,cá/mèo/chim/
