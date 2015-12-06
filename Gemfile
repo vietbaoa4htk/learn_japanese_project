@@ -15,6 +15,8 @@ gem "bootstrap-sass", "3.2.0.0"
 gem "will_paginate", "3.0.7"
 gem "chartkick"
 gem "groupdate"
+gem "font-awesome-rails"
+gem 'ionicons-rails'
 gem "momentjs-rails", ">= 2.9.0"
 gem "bootstrap3-datetimepicker-rails", "~> 4.17.37"
 
