@@ -1,20 +1,70 @@
 category_name,word_content,true_answer,other_answers
-animal,dog,chó,mèo/gà/vịt/
-animal,cat,mèo,chó/heo/ngỗng/
-animal,bird,chim,chuột/mèo/thằn lằn/
-animal,duck,vịt,chó/mèo/chim/
-animal,mouse,chuột,sâu/người/chó/
-animal,fly,ruồi,ong/chim cánh cụt/chó/
-animal,ant,kiến,ong/ruồi/chó/
-animal,bee,ong,chó/mèo/gà/
-animal,chicken,gà,chó/heo/bò/
-animal,pig,lợn,gà/chó/bò/
-animal,cow,bò cái,gà/chó/heo/
-animal,panda,gấu trúc,chim/chuột/chó/
-animal,bear,gấu,cá/chim/heo/
-animal,fish,cá,lợn/heo/chuột/
-animal,fox,cáo,chim/chuột/mèo/
-animal,butterfly,bướm,chim/chuột/cá/
-animal,snake,rắn,chuột/chó/mèo/
-animal,pigeon,chim bồ câu,chuột/cá/heo/
-animal,camel,lạc đà,cá/mèo/chim/
+giao thông,番号,số hiệu,biển báo/xe tải/công nông/
+giao thông,番線,tuyến đường,chuyến xe/vé tàu/tàu nhanh/
+giao thông,号車,số xe,còi xe/ngày sản xuất/ngày đi/
+giao thông,信号,đèn giao thông,đèn đỏ/vạch kẻ/dải phân cách/
+giao thông,快速,siêu tốc,bình thường/chầm chậm/tàu chậm/
+giao thông,時速,tốc độ,gia tốc/nhiên liệu/phí đường xá/
+giao thông,早速,ngay lập tức,từ từ/sắp đến nơi/dừng lại/
+giao thông,道路,con đường,sân bay/bến cảng/ga tàu/
+giao thông,空港,sân bay,bến cảng/ga tàu/con đường/
+giao thông,港,cảng,con đường/ga tàu/xe đạp/
+giao thông,飛行機,máy bay,xe máy/ô tô/máy kéo/
+giao thông,飛ぶ,bay,chạy/đi bộ/đi xe/
+giao thông,駐車場,bãi đỗ xe,cấm đỗ xe/điểm dừng xe buýt/lối vào/
+giao thông,駐車,sự đỗ xe,khởi hành/đến đích/tăng tốc/
+y tế,診療,khám chữa bệnh,thăm ốm/sinh đẻ/cận thị/
+y tế,医療,y tế,bộ y tế/y tá/điều dưỡng viên/
+y tế,治療,điều trị,khỏi bệnh/viện phí/ra viện/
+y tế,内科,khoa nội,khoa răng hàm/khoa ung biếu/lão khoa/
+y tế,外科,khoa ngoại,khoa nội/khoa sản/khoa nhi/
+y tế,産婦人科,khoa sản,khoa nội/khoa ngoại/khoa nhi/
+y tế,皮膚,da,tim/gan/mật/
+y tế,救急,cấp cứu,xe cứu thương/ca mổ/hồi sức/
+y tế,腰痛,đau thắt lưng,đau lưng/sỏi thận/gãy xương/
+y tế,関節,khớp xương,ngón tay/ngón chân/đầu gối
+y tế,神経,thần kinh,tiêu hóa/hô hấp/bài tiết/
+y tế,頭痛,cơn đau đầu,đau lưng/sỏi thận/gãy xương/
+y tế,小児科,khoa nhi,khoa nội/ khoa ngoại/lão khoa/
+y tế,医師,bác sĩ,y tá/điều dưỡng viên/bệnh nhân/
+y tế,介護,điều dưỡng,cấp cứu/điều trị/xuất viện/
+y tế,お見舞い,thăm nom,cứu/giúp/chữa bệnh/
+công việc,出張,đi công tác,làm việc/tăng ca/ca trực/
+công việc,予算,ngân sách,chi phí/tiền mặt/hợp đồng/
+công việc,予約,đặt trước,cuộc họp/hợp đồng/thôi việc/
+công việc,営業,doanh nghiệp,doanh nhân/tiền tệ/nhà máy/
+công việc,会議室,phòng họp,buổi họp/chủ tịch/phòng chờ/
+công việc,社内,nội bộ công ty,đối tác/đồng nghiệp/thư ký/
+công việc,管理,quản lý,khởi công/nhân viên/giám đốc/
+công việc,経済,kinh tế,tiền tệ/cổ phiếu/chứng khoán/
+công việc,経験,kinh nghiệm,kỹ năng/trình độ/chức vụ/
+công việc,経理,kế toán,kiểm tra/danh sách/ngân hàng/
+công việc,販売,việc bán,mua vào/nhập khẩu/xuất khẩu/
+công việc,事務,việc,quản lý/nghề nghiệp/phân công/
+công việc,任務,nhiệm vụ,trách nhiệm/quản lý/đi công tác/
+công việc,事務所,văn phòng,phòng họp/công ty/hội đồng/
+công việc,務める,làm việc,nghỉ phép/xin việc/sa thải/
+công việc,通勤,đi làm,đi về/nghỉ phép/làm thêm giờ/
+công việc,出勤,tới nơi làm việc,ra về/đến họp/kết thúc buổi làm/
+công việc,全部,toàn bộ,bộ phận/phòng ban/công ty/
+công việc,部長,trưởng phòng,nhân viên/đối tác/thư ký/
+học tập,担任,giáo viên chủ nhiệm,lớp trưởng/thầy hiệu trưởng/thầy hiệu phó/
+học tập,歴史,lịch sử,toán học/mỹ thuật/văn nghệ/
+học tập,点数,điểm số,bài kiểm tra/thứ hạng/xếp loại/
+học tập,数学,môn toán,hình học/tích phân/ngoại ngữ/
+học tập,教師,giáo viên,kỹ sư/y tá/nhân viên/
+học tập,学校,trường học,đại học/học sinh/giáo viên/
+học tập,学生,học sinh,học tập/nghiên cứu/thạc sĩ/
+học tập,宿題,bài tập,bài kiểm tra/thứ hạng/xếp loại/
+học tập,論文,luận văn,bài kiểm tra/bài văn/câu hỏi/
+học tập,出業,tốt nghiệp,thất nghiệp/hợp đồng/xuất khẩu lao động/
+học tập,教科書,sách giáo khoa,sách tham khảo/hợp đồng/ký hợp đồng/
+học tập,辞書,từ điển,sách giáo khoa/luận văn/vở ghi/
+học tập,専門,chuyên môn,trường học/kinh nghiệm/học phí/
+học tập,文学,văn học ,toán học/mỹ thuật/văn nghệ/
+học tập,化学,hóa học,văn học/sinh học/vật lý/
+học tập,物理,vật lý,văn học/sinh học/toán học
+học tập,教室,phòng học,phòng họp/kiểm tra/hội trường/
+học tập,先輩,khóa trên,giáo sư/thầy giáo/học sinh/
+học tập,後輩,khóa dưới,lớp trưởng/thầy hiệu trưởng/thầy hiệu phó/
+học tập,留学,du học,lao động/làm bài tập/nộp bài/
