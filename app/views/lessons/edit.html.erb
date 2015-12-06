@@ -1,25 +1,32 @@
+<div style="margin-bottom: 30px;">
 <%= form_for @lesson do |f| %>
+  <div class="row">
   <%= f.fields_for :results do |builder| %>
-    <div class="row question">
-      <div class="col-md-4">        
-        <h3>
+    <div class="question">
+      <div class="col-md-6 block-center">
+        <h3 class="text-center">
           <%= builder.options[:child_index] + 1 %>.
           <%= builder.object.word.content %>
         </h3>
+        <div class="container-fluid">
+          <% builder.object.word.answers.suffer.each do |answer| %>
+            <div class="form-group"> 
+              <div class="radio">
+                <label>
+                  <%= builder.radio_button :answer_id, answer.id %>
+                  <%= answer.content %>
+                </label>
+              </div>
+            </div>
+            <hr>
+          <% end %>
+        </div>
       </div>
-      <div class="col-md-8 container-fluid">
-        <% builder.object.word.answers.suffer.each do |answer| %>
-          <div class="row">
-            <%= builder.radio_button :answer_id, answer.id %>
-            <%= answer.content %>
-          </div>
-          <hr>
-        <% end %>
-      </div>
-      <hr>
     </div>
   <% end %>
+  </div>
   <div class="row">
-    <%= f.submit t(".submit"), class: "col-md-2 btn btn-primary", id: "submit_test" %>
+    <%= f.submit t(".submit"), class: "col-md-6 btn btn-lg col-md-offset-3 btn-primary", id: "submit_test" %>
   </div>
 <% end %>
+</div>
