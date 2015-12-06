@@ -10,11 +10,11 @@
   <aside class="col-md-4">
     <h4><%= t ".user_role" %></h4>
     <%= select(:user, :role,
-      Settings.user.role.collect{|f| [name_of_role(f), f]}) %>
+      Settings.user.role.collect{|f| [name_of_role(f), f]}, {}, {class: "form-control", style: "width: 160px;"}) %>
     <%= hidden_field_tag "user_id", @user.id %>
-    <%= button_to t(".btn_save"), "#", id: "btn-saves", disabled: true %>
+    <%= button_to t(".btn_save"), "#", id: "btn-saves", disabled: true, class: "btn btn-primary", style: "margin-top: 10px;" %>
   </aside>
   <aside class="col-md-4">
-    <%= button_to t(".btn_reset"), "#", id: "btn-reset" %>
+    <%= button_to t(".btn_reset"), "#", id: "btn-reset", class: "btn btn-danger" %>
   </aside>
 </div>

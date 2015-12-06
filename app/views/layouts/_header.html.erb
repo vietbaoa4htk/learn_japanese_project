@@ -5,9 +5,12 @@
     <div class="navbar-right">
       <ul class="nav navbar-nav">
         <% if logged_in? %>
-        <li><%= link_to t(".all_users"), users_path %></li>
         <% if current_user.admin? %>
             <li><%= link_to t(".import/export_file_csv"), admin_words_path %></li>
+            <li><%= link_to t(".all_users"), admin_users_path %></li>
+          <% else %>
+            <li><%= link_to t(".home"), root_path %></li>
+            <li><%= link_to t(".all_users"), users_path %></li>
           <% end %>
         <!-- User Account: style can be found in dropdown.less -->
         <li class="dropdown user user-menu">

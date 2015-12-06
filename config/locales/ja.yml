@@ -108,7 +108,7 @@ ja:
         btn_block: "ブロック"
         btn_unblock: "ブロックを解除"
       index:
-        h1index: "All users"
+        h1index: "ユーザー"
         no_result: "%{result}がありません。"
       show:
         confirm: "Are you sure?"
