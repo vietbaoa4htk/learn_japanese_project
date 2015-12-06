@@ -14,7 +14,7 @@
       <% end %>
     </blockquote>
     <%= form_for [category, category.lessons.build] do |f| %>
-      <%= f.submit t(".btn_take"), class: "btn btn-primary col-md-2" %>
+      <%= f.submit t(".btn_take"), class: "btn btn-primary col-md-2", style: "margin-right: 10px; margin-bottom: 10px;" %>
     <% end %>
     <%= button_to t(".btn_gotoword"), category_words_path(category),
       method: :get, class: "btn btn-primary col-md-2" %>

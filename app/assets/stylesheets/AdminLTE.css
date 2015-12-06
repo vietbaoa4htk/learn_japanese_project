@@ -338,7 +338,7 @@ body > .header {
 body > .header .navbar {
   height: 50px;
   margin-bottom: 0;
-  margin-left: 220px;
+  margin-left: 400px;
 }
 body > .header .navbar .sidebar-toggle {
   float: left;
@@ -400,7 +400,7 @@ body > .header .logo {
   line-height: 50px;
   text-align: center;
   padding: 0 10px;
-  width: 220px;
+  width: 400px;
   font-family: 'Kaushan Script', cursive;
   font-weight: 500;
   height: 50px;
@@ -3401,4 +3401,8 @@ fieldset[disabled] .btn-vk.active {
 .btn-vk .badge {
   color: #587ea3;
   background-color: #ffffff;
+}
+
+.dmm-btn {
+  color: #ffffff !important;
 }

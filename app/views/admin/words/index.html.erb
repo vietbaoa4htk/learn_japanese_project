@@ -2,7 +2,7 @@
   <h3><%= t ".title" %></h3>
     <%= form_tag admin_words_path, multipart: true do %>
       <%= file_field_tag :file %>
-      <%= submit_tag t ".btn_submit", class: "btn btn-primary" %>
+      <%= submit_tag t(".btn_submit"), {class: "btn btn-primary"} %>
     <% end %>
   <h4><%= t ".file_structure" %></h4>
   <p><%= t ".guide1" %></p>
@@ -10,5 +10,5 @@
   <p><%= t ".guide3" %></p>
 </div>
 <div>
-  <%= button_to t(".btn_export"), admin_words_path(format: "csv", check_action: "export") %>
+  <%= button_to t(".btn_export"), admin_words_path(format: "csv", check_action: "export"), {class: "btn btn-primary"} %>
 </div>
