@@ -6,14 +6,14 @@
       <%= f.label :content, t(".answers") %>
       <div class="answers">
         <%= f.fields_for :answers do |builder| %>
-          <div class="controls form-inline">
+          <div class="controls form-inline" style="margin-bottom: 4px;">
             <%= render "answer_fields", f: builder %>          
           </div>
         <% end %>
-        <%= link_to_add_fields t(".add_answer"), f, :answers %>
+        <%= link_to_add_fields t(".add_answer"), f, :answers, class: "btn btn-info btn-sm", style: "margin-top: 5px;" %>
       </div>
       <br>
-      <%= f.submit "Change", class: "btn btn-primary" %>
+      <%= f.submit t(".change"), class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

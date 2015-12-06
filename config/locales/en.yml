@@ -24,6 +24,10 @@ en:
       btn_words: "Category"
       btn_lessons: "Lessons"
       btn_goals: "Goals"
+      activities: "Activity Log"
+      activity: "Activity"
+      user: "User"
+      time: "Time"
     help:
       h3: "You can contact with administrators:"
   users:
@@ -58,6 +62,7 @@ en:
     category:
       btn_take: "Take a lesson"
       btn_gotoword: "Words"
+      word: "words"
   shared:
     error_messages:
       error_message: "Number of error: "
@@ -127,6 +132,7 @@ en:
           - Maybe this file was not csv file or this file was successfull imported.
         file_structure: "Structure of file:"
         title: "Import a CSV File"
+        export-title: "Export a CSV File"
         guide1: "- Line 1: category_name,word_content,true_answer,other_answers"
         guide2: "- In other_answers, each word separated by a /"
         guide3: "Example: animal,dog,chó,mèo/gà/vịt/"
@@ -135,7 +141,9 @@ en:
         flash_success: "Change success full"
       edit:
         word: "Word"
+        add_answer: "Add answer"
         answers: "Answers"
+        change: "Change"
   lessons:
     lesson:
       take_lesson: "Take"
@@ -154,6 +162,11 @@ en:
       user_role: "This user's role"
       btn_save: "Save"
       false_result: "False"
+      take_lesson: "Take"
+      lesson_category_name: "Category"
+      lesson_results_answered: "Answered"
+      lesson_create_time: "Created at"
+      lesson_mark: "Score"
     edit:
       submit: "Summit"
       submit_confirm: "Submit your answer ?"

@@ -1,25 +1,53 @@
-<h3 class="row">
-  <%= t ".all_lesson" %>
-</h3>
-<%= render @lesson %>
-<% if @lesson.finished? %>
-  <div class="row">
-    <% @lesson.results.each_with_index do |result, index| %>
-      <div class="col-md-4 question" >
-        <%= index + 1 %>.&nbsp
-        <%= result.word.content %>  
-      </div>
-      <div class= "col-md-8">
-        <% if result.correct? %>
-          <div class="answer-true">
-            <%= result.answer.content %>
-          </div>
-        <% else %>
-          <div class="answer-fail">
-            <%= t ".false_result" %>
+<style type="text/css" media="screen">
+  .question-answer{
+    border-bottom: 1px solid #bcbcbc;
+  }
+  .question-answer:last-child{
+    border-bottom: none;
+  }
+</style>
+<div class="row">
+  <div class="col-md-6">
+    <div class="box box-solid box-primary">
+        <div class="box-header">
+            <h3 class="box-title"><%= @lesson.category.name.capitalize %></h3>
+        </div>
+        <div class="box-body">
+            <p><%= t ".lesson_results_answered" %>: <code><%= @lesson.results.answered.count %></code></p>
+            <p><%= t ".lesson_create_time" %>: <code><%= @lesson.created_at.to_formatted_s :short %></code></p>
+            <% if @lesson.finished? %>
+            <p><%= t ".lesson_create_time" %>: <span class="badge bg-red"><%= @lesson.mark%>/<%= @lesson.results.count %></span></p>
+            <% else %>
+            <%= button_to t(".take_lesson"), edit_lesson_path(@lesson), method: :get, class: "btn btn-primary" %>
+            <% end %>        
+        </div><!-- /.box-body -->
+    </div>
+  </div>
+  <div class="col-md-6">
+    <% if @lesson.finished? %>
+    <div class="box box-solid bg-light-blue">
+      <div class="box-body">
+        <% @lesson.results.each_with_index do |result, index| %>
+          <div class="question-answer row" style="margin-left: 10px; margin-right: 0px;">
+            <div class="col-md-4 question" style="padding: 10px 0px;">
+              <%= index + 1 %>.&nbsp
+              <%= result.word.content %>  
+            </div>
+            <div class= "col-md-8" style="padding-right: 0px;">
+              <% if result.correct? %>
+                <div class="answer-true" style="color: #000;">
+                  <%= result.answer.content %>
+                </div>
+              <% else %>
+                <div class="answer-fail" style="color: #000;">
+                  <%= t ".false_result" %>
+                </div>
+              <% end %>
+            </div>
           </div>
         <% end %>
       </div>
+    </div>
     <% end %>
   </div>
-<% end %>
+</div>
