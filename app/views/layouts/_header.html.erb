@@ -1,53 +1,13 @@
-<!-- <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <nav class="nav navbar-nav navbar-left">
-      <ul class="nav navbar-nav">
-        <li>
-          <%= link_to t(".website"), "/", id: "nav-custom" %>
-        </li>
-      </ul>
-    </nav>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <%= link_to "English", "/en/" %>
-        <%= link_to "Japanese", "/ja/" %>
-        <% if logged_in? %>
-          <% if current_user.admin? %>
-            <li><%= link_to t(".home"), admin_root_path %></li>
-            <li><%= link_to t(".import/export_file_csv"), admin_words_path %></li>
-            <li><%= link_to t(".all_users"), admin_users_path %></li>
-          <% else %>
-            <li><%= link_to t(".home"), root_path %></li>
-            <li><%= link_to t(".all_users"), users_path %></li>
-          <% end %>
-          <li class="dropdown">
-            <%= link_to "#", class: "dropdown-toggle", "data-toggle" => "dropdown" do %>
-              <%= t ".account" %>
-              <b class="caret"></b>
-            <% end %>
-            <ul class="dropdown-menu">
-              <li><%= link_to t(".profile"), current_user %></li>
-              <li><%= link_to t(".setting"), edit_user_path(current_user) %></li>
-              <li class="divider"></li>
-              <li>
-                <%= link_to t(".log_out"), logout_path, method: "delete" %>
-              </li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to t(".sign_up"), signup_path %></li>
-          <li><%= link_to t(".log_in"), login_path %></li>
-        <% end %>
-      </ul>
-    </nav>
-  </div>
-</header> -->
 <header class="header main-header">
   <%= link_to t(".website"), "/", class: "logo" %>
   <nav class="navbar navbar-static-top" role="navigation">
     <!-- Navbar Right Menu -->
     <div class="navbar-right">
       <ul class="nav navbar-nav">
+        <% if logged_in? %>
+        <% if current_user.admin? %>
+            <li><%= link_to t(".import/export_file_csv"), admin_words_path %></li>
+          <% end %>
         <!-- Notifications: style can be found in dropdown.less -->
         <li class="dropdown notifications-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -74,40 +34,33 @@
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <%= gravatar_for current_user , size: 22%>
-            <span class="hidden-xs">Alexander Pierce</span>
+            <span class="hidden-xs"><%= current_user.name%></span>
           </a>
           <ul class="dropdown-menu">
             <!-- User image -->
             <li class="user-header">
-              <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+              <%= gravatar_for current_user , size: 160%>
               <p>
-                Alexander Pierce - Web Developer
-                <small>Member since Nov. 2012</small>
+                <%= current_user.name%>
               </p>
-            </li>
-            <!-- Menu Body -->
-            <li class="user-body">
-              <div class="col-xs-4 text-center">
-                <a href="#">Followers</a>
-              </div>
-              <div class="col-xs-4 text-center">
-                <a href="#">Sales</a>
-              </div>
-              <div class="col-xs-4 text-center">
-                <a href="#">Friends</a>
-              </div>
             </li>
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-left">
-                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                <%= link_to t(".profile"), edit_user_path(current_user), class: "btn btn-default btn-flat" %>
               </div>
               <div class="pull-right">
-                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                <%= link_to t(".log_out"), logout_path, method: "delete", class: "btn btn-default btn-flat" %>
               </div>
             </li>
           </ul>
         </li>
+        <% else %>
+          <li><%= link_to t(".sign_up"), signup_path %></li>
+          <li><%= link_to t(".log_in"), login_path %></li>
+        <% end %>
+        <%= link_to "English", "/en/" %>
+        <%= link_to "Japanese", "/ja/" %>
       </ul>
     </div>
   </nav>
