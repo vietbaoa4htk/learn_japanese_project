@@ -23,7 +23,11 @@ ja:
     home:
       btn_words: "カテゴリ"
       btn_lessons: "課題"
-      btn_goals: "Target"
+      btn_goals: "ターゲット"
+      activities: "活動記録"
+      activity: "活動"
+      user: "ユーザー"
+      time: "時間"
     help:
       h3: "管理者にお連絡してお願い!"
   users:
@@ -58,6 +62,7 @@ ja:
     category:
       btn_take: "レッスンを取る"
       btn_gotoword: "言葉"
+      word: "語"
   shared:
     error_messages:
       error_message: "エラーの数: "
@@ -119,23 +124,26 @@ ja:
         btn_reset: "パスワードをリセットする"
     words:
       index:
-        btn_submit: "Import data from CSV file"
+        btn_submit: "輸入"
         flash_success: "Successfull import data from CSV file"
         flash_danger2: "Cannot read data!"
         flash_danger1: 
           - Nothing change. Please check your file again!
           - Maybe this file was not csv file or this file was successfull imported.
         file_structure: "Structure of file:"
-        title: "Import a CSV File"
+        title: "CSVファイルの輸入"
+        export-title: "CSVファイルの輸出"
         guide1: "- Line 1: category_name,word_content,true_answer,other_answers"
         guide2: "- In other_answers, each word separated by a /"
         guide3: "Example: animal,dog,chó,mèo/gà/vịt/"
-        btn_export: "Export CSV file"
+        btn_export: "輸出"
       update:
         flash_success: "変更しました。"
       edit:
         word: "言葉"
+        add_answer: "回答の追加"
         answers: "答え"
+        change: "更新"
   lessons:
     lesson:
       take_lesson: "取る"
@@ -153,7 +161,12 @@ ja:
       all_lesson: "Show lesson"
       user_role: "This user's role"
       btn_save: "変更する"
-      false_result: "False"
+      false_result: "偽"
+      take_lesson: "取る"
+      lesson_category_name: "カテゴリ"
+      lesson_results_answered: "Answered"
+      lesson_create_time: "Created at"
+      lesson_mark: "スコア"
     edit:
       submit: "サミット"
       submit_confirm: "Submit your answer?"

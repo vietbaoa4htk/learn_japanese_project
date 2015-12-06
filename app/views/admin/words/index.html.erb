@@ -1,14 +1,21 @@
-<div>
+<div class="row">
+<div class="col-md-4">
   <h3><%= t ".title" %></h3>
     <%= form_tag admin_words_path, multipart: true do %>
       <%= file_field_tag :file %>
-      <%= submit_tag t(".btn_submit"), {class: "btn btn-primary"} %>
+      <%= submit_tag t(".btn_submit"), {class: "btn btn-primary", style: "margin-top: 10px;"} %>
     <% end %>
-  <h4><%= t ".file_structure" %></h4>
-  <p><%= t ".guide1" %></p>
-  <p><%= t ".guide2" %></p>
-  <p><%= t ".guide3" %></p>
 </div>
-<div>
+<div class="col-md-4">
+  <h3><%= t ".export-title" %></h3>
   <%= button_to t(".btn_export"), admin_words_path(format: "csv", check_action: "export"), {class: "btn btn-primary"} %>
+</div>
+<div class="col-md-4">
+  <blockquote>
+    <h4><%= t ".file_structure" %></h4>
+    <p><%= t ".guide1" %></p>
+    <p><%= t ".guide2" %></p>
+    <p><%= t ".guide3" %></p>
+  </blockquote>
+</div>
 </div>
