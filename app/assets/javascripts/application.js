@@ -16,6 +16,7 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require turbolinks
+//= require 'icheck'
 //= require_tree .
 
 function remove_fields(link) {

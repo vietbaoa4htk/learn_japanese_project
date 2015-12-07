@@ -1,26 +1,20 @@
-<div id="lesson-container", class="row">
-  <div class="col-md-2">
-    <%= lesson.category.name %>
-  </div>
-  <div class="col-md-6">
-    <div class="col-md-2">
-      <%= lesson.results.answered.count %>
-      <%= t ".question_done" %>
+<tr>
+ <td><%= link_to lesson.category.name.capitalize, lesson_path(lesson)%></td>
+ <td><%= lesson.results.answered.count %><%= t ".question_done" %></td>
+ <td><%= lesson.created_at.to_formatted_s :short %></td>
+ <td style="width: 50px;">
+    <% unless lesson.finished? %>
+     <%= button_to t(".take_lesson"), edit_lesson_path(lesson), method: :get, class: "btn btn-primary" %>
+    <% else %>
+       <span class="badge bg-red"><%= lesson.mark%>/<%= lesson.results.count %></span>
+    <%end%>
+ </td>
+ <td style="width: 25%;">
+   <% unless lesson.finished? %>
+   <% else %>
+    <div class="progress xs">
+        <div class="progress-bar progress-bar-danger" style="width: <%= 100*lesson.mark/lesson.results.count %>%"></div>
     </div>
-    <div class="col-md-4">
-      <%= lesson.created_at.to_formatted_s :short %>
-    </div>
-  </div>
-  <% unless lesson.finished? %>
-    <div class="col-md-4">
-      <%= button_to t(".take_lesson"), edit_lesson_path(lesson), method: :get, class: "btn btn-default" %>
-    </div>
-  <% else %>
-    <div class="col-md-4">
-      <%= lesson.mark %>
-      <%= t ".slash" %>
-      <%= lesson.results.count %>
-    </div>
-  <% end %>
-</div>
-<hr>
+   <% end %>
+ </td>
+</tr>

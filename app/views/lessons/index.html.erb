@@ -1,19 +1,24 @@
-<h3 class="row">
-  <%= t ".all_lesson" %>
-</h3>
-<div classs="row">
-  <div class="col-md-2 table-title">
-    <%= t ".lesson_category_name" %>
-  </div>
-  <div class="col-md-2 table-title">
-    <%= t ".lesson_results_answered" %>
-  </div>
-  <div class="col-md-4 table-title">
-    <%= t ".lesson_create_time" %>
-  </div>
-  <div class="col-md-4 table-title">
-    <%= t ".lesson_mark" %>
+<div class="row">
+  <div class="col-md-12">
+    <h3>
+      <%= t ".all_lesson" %>
+    </h3>
+    <div class="row table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+           <th><%= t ".lesson_category_name" %></th>
+           <th><%= t ".lesson_results_answered" %></th>
+           <th><%= t ".lesson_create_time" %></th>
+           <th style="width: 50px;"><%= t ".lesson_mark" %></th>
+           <th style="width: 25%;"></th>
+          </tr>
+         </thead> 
+         <tbody>
+          <%= render @lessons %>
+         </tbody>
+      </table>
+    </div>
+    <%= will_paginate @lessons %>
   </div>
 </div>
-<%= render @lessons %>
-<%= will_paginate @lessons %>
